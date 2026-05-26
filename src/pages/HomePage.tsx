@@ -7,6 +7,7 @@ import {
 } from "../api/products";
 import Aside from "../components/Aside/Aside";
 import CardList from "../components/CardList/CardList";
+import type { Product } from "../api/products";
 
 //const categories = ["all", "beauty", "fragrances", "furniture", "groceries"];
 
@@ -32,7 +33,7 @@ function HomePage() {
   );
   const { data: categories = [] } = useCategories();
 
-  let products: any[] = [];
+  let products: Product[] = [];
   let total = 0;
 
   if (searchQuery) {
@@ -66,7 +67,7 @@ function HomePage() {
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-    setSearchQuery("");
+    clearSearch();
     setPage(1);
   };
 

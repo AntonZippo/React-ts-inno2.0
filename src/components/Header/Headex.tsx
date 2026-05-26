@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
+import { useCart } from "../../context/CartContext";
 
 function Header() {
+  const { totalItems } = useCart();
   return (
     <>
       <header className="bg-white shadow p-4">
@@ -8,7 +10,7 @@ function Header() {
           <Link to="/">Product Company 2.0</Link>
           <div className="flex gap-10 mr-30">
             <Link to="/">Home</Link>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart : {totalItems}</Link>
           </div>
           <Link to="/login">Login</Link>
         </nav>

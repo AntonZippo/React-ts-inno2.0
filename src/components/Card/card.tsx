@@ -1,11 +1,13 @@
 import type { Product } from "../../api/products";
 import { Link } from "@tanstack/react-router";
+import { useCart } from "../../context/CartContext";
 
 interface CardProps {
   product: Product;
 }
 
 function Card({ product }: CardProps) {
+  const { addToCart } = useCart();
   if (!product) {
     return <div className="card">No Data</div>;
   }
@@ -41,12 +43,9 @@ function Card({ product }: CardProps) {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-
-            // TODO: add logic to cartList
-
-            console.log("Add to cart", product.id);
+            addToCart(product);
           }}
-          className="mt-3 w-full bg-blue-500 text-white py-1 rounded hover:bg-blue-600 transition"
+          className="mt-3 w-full bg-blue-500 text-white py-1 rounded hover:bg-blue-600 transition cursor-pointer "
         >
           Add to cart
         </button>
