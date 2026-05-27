@@ -16,7 +16,7 @@ function Card({ product }: CardProps) {
     <Link
       to="/product/$id"
       params={{ id: String(product.id) }}
-      className="block rounded-lg overflow-hidden shadow shadow-gray-300 hover:shadow-lg  hover:-translate-y-1 transition bg-white"
+      className="block rounded-lg overflow-hidden shadow shadow-gray-300 hover:shadow-lg  hover:-translate-y-1 transition bg-white dark:bg-gray-700 dark:text-white"
     >
       <div className="w-full bg-gray-100 overflow-hidden p-[5px_12px_0_12px]">
         {product.thumbnail && (
@@ -31,11 +31,11 @@ function Card({ product }: CardProps) {
       </div>
       <div className="p-4">
         <h3 className="font-semibold text-md truncate">{product.title}</h3>
-        <p className="text-gray-600 text-sm mt-1 line-clamp-2">
+        <p className="text-gray-600 text-sm mt-1 line-clamp-2 dark:text-white">
           {product.description}
         </p>
         <div className="flex items-center justify-between mt-2">
-          <span className="text-xl font-bold text-indigo-500">
+          <span className="text-xl font-bold text-indigo-500 dark:text-green-500">
             ${product.price}
           </span>
           <span className="flex items-center gap-1 text-sm">

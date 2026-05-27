@@ -58,15 +58,15 @@ function Aside({
   };
 
   return (
-    <aside className="w-64 p-4 bg-gray-100 rounded-lg">
+    <aside className="w-64 p-4 bg-gray-100 rounded-lg dark:bg-gray-800 dark:text-white">
       <h3 className="font-bold mb-2">Categories</h3>
       <div className="flex flex-col gap-1 mb-4">
         <button
           onClick={() => onSelectCategory("all")}
           className={`text-left px-2 py-1 rounded ${
             selectedCategory === "all"
-              ? "bg-gray-500 text-white"
-              : "hover:bg-gray-200"
+              ? "bg-gray-500 text-white dark:bg-gray-600"
+              : "hover:bg-gray-200 dark:hover:bg-gray-700"
           }`}
         >
           All
@@ -77,8 +77,8 @@ function Aside({
             onClick={() => onSelectCategory(cat)}
             className={`text-left px-2 py-1 rounded ${
               selectedCategory === cat
-                ? "bg-gray-500 text-white"
-                : "hover:bg-gray-300"
+                ? "bg-gray-500 text-white dark:bg-gray-600"
+                : "hover:bg-gray-200 dark:hover:bg-gray-700"
             }`}
           >
             {cat.charAt(0).toUpperCase() + cat.slice(1)}
@@ -166,7 +166,7 @@ function Aside({
             Reset
           </button>
         </div>
-        <p className="text-xs text-gray-500 mt-2">
+        <p className="text-xs text-gray-500 mt-2 dark:text-gray-300">
           Filters apply only to the current page.
         </p>
       </form>

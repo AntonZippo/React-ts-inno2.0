@@ -30,7 +30,7 @@ function ProductPage() {
   }
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 min-h-[70vh]">
-      <div className="bg-white rounded-2xl inset-ring-2 inset-ring-gray-500/10 shadow-md overflow-hidden">
+      <div className="bg-white rounded-2xl inset-ring-2 inset-ring-gray-500/10 shadow-md overflow-hidden dark:bg-gray-100">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="flex items-center justify-center p-4">
             <img
