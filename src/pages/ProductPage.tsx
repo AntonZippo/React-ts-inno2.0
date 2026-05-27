@@ -1,7 +1,9 @@
 import { useParams } from "@tanstack/react-router";
 import { useProductById } from "../api/products";
+import { useCart } from "../context/CartContext";
 
 function ProductPage() {
+  const { addToCart } = useCart();
   const { id } = useParams({ from: "/product/$id" });
   const productId = id ? parseInt(id, 10) : undefined;
 
@@ -47,7 +49,7 @@ function ProductPage() {
             </p>
 
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-3xl font-bold text-blue-600">
+              <span className="text-3xl font-bold text-indigo-600">
                 ${product.price}
               </span>
               {product.discountPercentage > 0 && (
@@ -77,9 +79,8 @@ function ProductPage() {
             </div>
 
             <button
-              onClick={() => console.log("Add to cart", product.id)}
-              // TODO : add cart logic;
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200"
+              onClick={() => addToCart(product)}
+              className="w-full bg-gray-500 hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 cursor-pointer"
             >
               Buy
             </button>

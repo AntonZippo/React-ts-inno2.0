@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { StaleTime } from "../app.config";
 
 export type Product = {
   id: number;
@@ -24,6 +25,7 @@ export const useProducts = (limit: number, skip: number) => {
       return data as { products: Product[]; total: number };
     },
     staleTime: 5 * 60 * 1000, // lifeTime of data , then it's expired and refetch
+    // gcTime  (Garbage Collection Time) dellete unnessesary data after time
   });
 };
 
@@ -43,7 +45,7 @@ export const useSearchProducts = (
       return data as { products: Product[]; total: number };
     },
     enabled: !!query, // if it's no querry , will not fetch ,   "!!" make any value to bool cos enabled wanted bool.
-    staleTime: 5 * 60 * 1000,
+    staleTime: StaleTime,
   });
 };
 
@@ -62,7 +64,7 @@ export const useProductsByCategory = (
       return data as { products: Product[]; total: number };
     },
     enabled: !!category && category !== "all",
-    staleTime: 5 * 60 * 1000,
+    staleTime: StaleTime,
   });
 };
 
@@ -74,7 +76,7 @@ export const useCategories = () => {
       const data = await res.json();
       return data as string[];
     },
-    staleTime: 5 * 60 * 1000,
+    staleTime: StaleTime,
   });
 };
 
@@ -87,6 +89,6 @@ export const useProductById = (id: number | undefined) => {
       return data as Product;
     },
     enabled: !!id,
-    staleTime: 5 * 60 * 1000,
+    staleTime: StaleTime,
   });
 };

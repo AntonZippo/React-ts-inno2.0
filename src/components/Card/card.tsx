@@ -19,12 +19,15 @@ function Card({ product }: CardProps) {
       className="block rounded-lg overflow-hidden shadow shadow-gray-300 hover:shadow-lg  hover:-translate-y-1 transition bg-white"
     >
       <div className="w-full bg-gray-100 overflow-hidden p-[5px_12px_0_12px]">
-        <img
-          src={product.thumbnail}
-          alt={product.title}
-          className="w-full  h-full object-cover block"
-          loading="lazy"
-        />
+        {product.thumbnail && (
+          <img
+            src={product.thumbnail}
+            alt={product.title}
+            className="w-full h-full object-cover block"
+            fetchPriority="high"
+            loading="eager"
+          />
+        )}
       </div>
       <div className="p-4">
         <h3 className="font-semibold text-md truncate">{product.title}</h3>
@@ -32,7 +35,7 @@ function Card({ product }: CardProps) {
           {product.description}
         </p>
         <div className="flex items-center justify-between mt-2">
-          <span className="text-xl font-bold text-blue-600">
+          <span className="text-xl font-bold text-indigo-500">
             ${product.price}
           </span>
           <span className="flex items-center gap-1 text-sm">
@@ -45,7 +48,7 @@ function Card({ product }: CardProps) {
             e.stopPropagation();
             addToCart(product);
           }}
-          className="mt-3 w-full bg-blue-500 text-white py-1 rounded hover:bg-blue-600 transition cursor-pointer "
+          className="mt-3 w-full bg-gray-500 text-white py-1 rounded hover:bg-blue-500 transition cursor-pointer "
         >
           Add to cart
         </button>

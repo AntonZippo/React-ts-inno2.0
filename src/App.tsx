@@ -10,7 +10,9 @@ function App() {
         <Outlet />
       </main>
 
-      <footer className="bg-gray-100 text-center p-4">Footer</footer>
+      <footer className="bg-gray-100 text-center shadow p-4 italic">
+        Product company 2.0 | About | 2026{" "}
+      </footer>
     </div>
   );
 }

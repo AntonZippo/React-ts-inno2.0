@@ -65,7 +65,7 @@ function Aside({
           onClick={() => onSelectCategory("all")}
           className={`text-left px-2 py-1 rounded ${
             selectedCategory === "all"
-              ? "bg-blue-500 text-white"
+              ? "bg-gray-500 text-white"
               : "hover:bg-gray-200"
           }`}
         >
@@ -77,8 +77,8 @@ function Aside({
             onClick={() => onSelectCategory(cat)}
             className={`text-left px-2 py-1 rounded ${
               selectedCategory === cat
-                ? "bg-blue-500 text-white"
-                : "hover:bg-gray-200"
+                ? "bg-gray-500 text-white"
+                : "hover:bg-gray-300"
             }`}
           >
             {cat.charAt(0).toUpperCase() + cat.slice(1)}
@@ -97,12 +97,15 @@ function Aside({
         <div className="flex gap-2 mt-1">
           <button
             onClick={onSearchSubmit}
-            className="bg-blue-500 text-white px-3 py-1 rounded text-sm"
+            className="bg-gray-500 text-white hover:bg-blue-500 px-3 py-1 rounded text-sm cursor-pointer"
           >
             Search
           </button>
           {searchInput && (
-            <button onClick={clearSearch} className="text-sm text-red-500">
+            <button
+              onClick={clearSearch}
+              className="text-sm text-black bg-gray-300 px-3 py-1 rounded cursor-pointer hover:text-white hover:bg-red-500"
+            >
               Clear
             </button>
           )}
@@ -112,26 +115,24 @@ function Aside({
       <form onSubmit={handleApplyFilters}>
         <h3 className="font-bold mb-2">Price</h3>
         <div className="mb-2">
-          <label className="block text-sm">Min: ${tempMinPrice}</label>
+          <label className="block text-sm">Min: 0 $</label>
           <input
-            type="range"
-            //TODO change for text or make comfort range
-            min="0"
-            max="10000"
+            aria-label="Minimal Price filter input"
+            type="text"
+            placeholder="Min price"
             value={tempMinPrice}
             onChange={(e) => setTempMinPrice(Number(e.target.value))}
-            className="w-full"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-sm">Max: ${tempMaxPrice}</label>
+          <label className="block text-sm ">Max: 10000 $</label>
           <input
-            type="range"
-            min="0"
-            max="10000"
+            aria-label="Maximum Price filter input"
+            type="text"
             value={tempMaxPrice}
             onChange={(e) => setTempMaxPrice(Number(e.target.value))}
-            className="w-full"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"
           />
         </div>
 
@@ -139,6 +140,7 @@ function Aside({
         <div className="mb-4">
           <label className="block text-sm">Min rating: {tempMinRating}★</label>
           <input
+            aria-label="Minimal Rating filter input"
             type="range"
             min="0"
             max="5"
@@ -152,14 +154,14 @@ function Aside({
         <div className="flex gap-2">
           <button
             type="submit"
-            className="bg-blue-500 text-white px-3 py-1 rounded text-sm"
+            className="bg-gray-500 hover:bg-blue-500 cursor-pointer text-white px-3 py-1 rounded text-sm"
           >
             Apply Filters
           </button>
           <button
             type="button"
             onClick={handleResetFilters}
-            className="bg-gray-300 text-gray-800 px-3 py-1 rounded text-sm"
+            className="bg-gray-300 text-gray-800 px-3 py-1 rounded text-sm  hover:text-white hover:bg-red-500 cursor-pointer"
           >
             Reset
           </button>

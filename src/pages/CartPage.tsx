@@ -35,7 +35,7 @@ export default function CartPage() {
             </div>
             <button
               onClick={() => removeFromCart(item.id)}
-              className="text-red-500 hover:text-red-700 cursor-pointer"
+              className="text-red-500 hover:text-white hover:bg-red-400 cursor-pointer px-2 py-1 rounded-md"
             >
               Remove
             </button>
@@ -48,7 +48,7 @@ export default function CartPage() {
         <div className="space-x-3">
           <button
             onClick={clearCart}
-            className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer"
+            className="px-4 py-2 bg-gray-200 rounded hover:bg-red-400  hover:text-white cursor-pointer"
           >
             Clear cart
           </button>

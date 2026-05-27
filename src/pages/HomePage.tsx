@@ -8,19 +8,21 @@ import {
 import Aside from "../components/Aside/Aside";
 import CardList from "../components/CardList/CardList";
 import type { Product } from "../api/products";
-
-//const categories = ["all", "beauty", "fragrances", "furniture", "groceries"];
+import { MaxPrice } from "../app.config";
+import { MinPrice } from "../app.config";
+import { MinRating } from "../app.config";
+import { ProductsLimitOnPage } from "../app.config";
 
 function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [searchInput, setSearchInput] = useState("");
-  const [maxPrice, setMaxPrice] = useState(10000);
-  const [minPrice, setMinPrice] = useState(0);
-  const [minRating, setMinRating] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(MaxPrice);
+  const [minPrice, setMinPrice] = useState(MinPrice);
+  const [minRating, setMinRating] = useState(MinRating);
   const [page, setPage] = useState(1);
 
-  const limit = 12;
+  const limit = ProductsLimitOnPage;
   const skip = (page - 1) * limit;
 
   const { data: allData, isLoading: allLoading } = useProducts(limit, skip);
@@ -107,7 +109,7 @@ function HomePage() {
             <button
               onClick={() => setPage((p) => p - 1)}
               disabled={page === 1}
-              className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+              className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50 cursor-pointer disabled:cursor-default"
             >
               ← Previous
             </button>
@@ -117,7 +119,7 @@ function HomePage() {
             <button
               onClick={() => setPage((p) => p + 1)}
               disabled={page === totalPages}
-              className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+              className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50 cursor-pointer disabled:cursor-default"
             >
               Next →
             </button>

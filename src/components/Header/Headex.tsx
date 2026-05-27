@@ -5,14 +5,36 @@ function Header() {
   const { totalItems } = useCart();
   return (
     <>
-      <header className="bg-white shadow p-4">
-        <nav className="flex justify-between">
-          <Link to="/">Product Company 2.0</Link>
-          <div className="flex gap-10 mr-30">
-            <Link to="/">Home</Link>
-            <Link to="/cart">Cart : {totalItems}</Link>
+      <header className=" flex bg-gray-100 shadow h-14 items-center p-4 sticky top-0 z-10">
+        <nav className="flex justify-between items-center w-full">
+          <Link
+            to="/"
+            className="italic font-bold underline text-gray-600 hover:text-indigo-600"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            Product Company 2.0
+          </Link>
+          <div className="flex gap-6 ">
+            <Link
+              to="/"
+              className="bg-gray-300 py-1 px-2 rounded-md  hover:bg-blue-500 hover:text-white"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              Home
+            </Link>
+            <Link
+              to="/cart"
+              className="bg-gray-300 py-1 px-2 rounded-md  hover:bg-blue-500 hover:text-white"
+            >
+              Cart : {totalItems}
+            </Link>
           </div>
-          <Link to="/login">Login</Link>
+          <Link
+            to="/login"
+            className="bg-gray-300 py-1 px-2 rounded-md  hover:bg-blue-500 hover:text-white"
+          >
+            Login
+          </Link>
         </nav>
       </header>
     </>
