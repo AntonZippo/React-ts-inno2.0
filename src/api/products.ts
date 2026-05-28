@@ -24,7 +24,7 @@ export const useProducts = (limit: number, skip: number) => {
       const data = await res.json();
       return data as { products: Product[]; total: number };
     },
-    staleTime: 5 * 60 * 1000, // lifeTime of data , then it's expired and refetch
+    staleTime: StaleTime, // lifeTime of data , then it's expired and refetch
     // gcTime  (Garbage Collection Time) dellete unnessesary data after time
   });
 };

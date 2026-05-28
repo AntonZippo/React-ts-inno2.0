@@ -29,13 +29,13 @@ function Header({ toggleTheme }: HeaderProps) {
               to="/cart"
               className="bg-gray-100 text-cyan-700 border border-cyan-700 py-2 px-3 rounded-md  hover:bg-cyan-700 hover:text-white dark:bg-gray-600 dark:border-none dark:text-white"
             >
-              Cart : {totalItems}
+              🛒 Cart : {totalItems}
             </Link>
             <button
               className="bg-gray-100 text-cyan-700 border border-cyan-700  dark:bg-gray-600 dark:text-white py-2 px-3 rounded-md  hover:bg-cyan-700 hover:text-white cursor-pointer dark:border-none"
               onClick={toggleTheme}
             >
-              ☀️/🌙
+              ☀️/🌑
             </button>
           </div>
           <Link

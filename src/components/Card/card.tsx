@@ -48,7 +48,7 @@ function Card({ product }: CardProps) {
             e.stopPropagation();
             addToCart(product);
           }}
-          className="mt-3 w-full bg-cyan-800 text-white py-1 rounded hover:bg-cyan-700 transition cursor-pointer dark:bg-cyan-700 dark:hover:bg-cyan-600"
+          className="mt-3 w-full bg-cyan-800 font-semibold text-white py-1 rounded hover:bg-cyan-700 transition cursor-pointer dark:bg-cyan-700 dark:hover:bg-cyan-600"
         >
           Add to cart
         </button>

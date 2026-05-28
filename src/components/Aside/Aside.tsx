@@ -65,7 +65,7 @@ function Aside({
           onClick={() => onSelectCategory("all")}
           className={`text-left px-3 py-2 rounded-lg bg-gray-200 dark:bg-gray-500 ${
             selectedCategory === "all"
-              ? "bg-zinc-600 text-white dark:bg-gray-800"
+              ? "bg-zinc-600 text-white dark:bg-gray-700"
               : "hover:bg-gray-300 dark:hover:bg-gray-700  duration-100"
           }`}
         >
@@ -77,8 +77,8 @@ function Aside({
             onClick={() => onSelectCategory(cat)}
             className={`text-left px-3 py-2 rounded-lg bg-gray-200 dark:bg-gray-500 ${
               selectedCategory === cat
-                ? "bg-zinc-600 text-white dark:bg-gray-800"
-                : "hover:bg-gray-300 dark:hover:bg-gray-700 duration-100"
+                ? "bg-zinc-600 text-white dark:bg-gray-700"
+                : "hover:bg-gray-300 dark:hover:bg-gray-600 duration-100"
             }`}
           >
             {cat.charAt(0).toUpperCase() + cat.slice(1)}
@@ -97,7 +97,7 @@ function Aside({
         <div className="flex gap-1">
           <button
             onClick={onSearchSubmit}
-            className="bg-cyan-700 text-white  hover:bg-blue-500 px-3 py-1 rounded text-sm cursor-pointer "
+            className="bg-cyan-800 hover:bg-cyan-700 text-white px-3 py-1 rounded text-sm cursor-pointer "
           >
             🔍
           </button>
@@ -159,14 +159,14 @@ function Aside({
         <div className="flex flex-row w-full gap-2">
           <button
             type="submit"
-            className=" flex-1 bg-cyan-700 hover:bg-blue-500 cursor-pointer text-white px-3 py-1 rounded text-sm"
+            className=" flex-1 bg-cyan-800 hover:bg-cyan-700 cursor-pointer text-white px-3 py-2 rounded text-sm"
           >
             Apply Filters
           </button>
           <button
             type="button"
             onClick={handleResetFilters}
-            className=" flex-1 bg-white text-gray-800 px-3 py-1 rounded text-sm  hover:text-white hover:bg-red-500 cursor-pointer"
+            className=" flex-1 bg-white text-gray-800 px-3 py-2 rounded text-sm  hover:text-white hover:bg-red-500 cursor-pointer"
           >
             Reset
           </button>

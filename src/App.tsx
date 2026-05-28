@@ -21,7 +21,7 @@ function App() {
             <Outlet />
           </main>
 
-          <footer className="bg-white text-center rounded-md  shadow p-4 italiс dark:bg-gray-800 dark:text-white">
+          <footer className="bg-white text-center rounded-md  shadow p-4 italic dark:bg-gray-800 dark:text-white">
             Product company 2.0 | About | 2026{" "}
           </footer>
         </div>
