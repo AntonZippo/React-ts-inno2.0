@@ -18,7 +18,7 @@ function Card({ product }: CardProps) {
       params={{ id: String(product.id) }}
       className="block rounded-lg overflow-hidden shadow shadow-gray-300 hover:shadow-lg  hover:-translate-y-1 transition bg-white dark:bg-gray-700 dark:text-white"
     >
-      <div className="w-full bg-gray-100 overflow-hidden p-[5px_12px_0_12px]">
+      <div className="w-full bg-white overflow-hidden p-[5px_12px_0_12px]">
         {product.thumbnail && (
           <img
             src={product.thumbnail}
@@ -35,7 +35,7 @@ function Card({ product }: CardProps) {
           {product.description}
         </p>
         <div className="flex items-center justify-between mt-2">
-          <span className="text-xl font-bold text-indigo-500 dark:text-green-500">
+          <span className="text-xl font-bold text-cyan-800 dark:text-white ">
             ${product.price}
           </span>
           <span className="flex items-center gap-1 text-sm">
@@ -48,7 +48,7 @@ function Card({ product }: CardProps) {
             e.stopPropagation();
             addToCart(product);
           }}
-          className="mt-3 w-full bg-gray-500 text-white py-1 rounded hover:bg-blue-500 transition cursor-pointer "
+          className="mt-3 w-full bg-cyan-800 text-white py-1 rounded hover:bg-cyan-700 transition cursor-pointer dark:bg-cyan-700 dark:hover:bg-cyan-600"
         >
           Add to cart
         </button>

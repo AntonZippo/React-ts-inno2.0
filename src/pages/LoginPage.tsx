@@ -46,7 +46,7 @@ function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 cursor-pointer"
+            className="w-full bg-cyan-700 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 cursor-pointer"
           >
             Enter
           </button>
@@ -56,7 +56,7 @@ function LoginPage() {
           Don't have an acc?{" "}
           <Link
             to="/login"
-            className="text-blue-600 hover:underline font-medium"
+            className="text-cyan-700 hover:underline font-medium"
           >
             Register
           </Link>

@@ -80,7 +80,7 @@ function ProductPage() {
 
             <button
               onClick={() => addToCart(product)}
-              className="w-full bg-gray-500 hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 cursor-pointer"
+              className="w-full bg-cyan-700 hover:bg-cyan-600 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 cursor-pointer"
             >
               Buy
             </button>

@@ -84,7 +84,7 @@ function HomePage() {
   };
 
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-2 max-lg:flex-col">
       <Aside
         categories={categories}
         selectedCategory={selectedCategory}

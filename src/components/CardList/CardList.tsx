@@ -15,7 +15,7 @@ function CardList({ products, isLoading }: CardListProps) {
     return <div>No products found</div>;
   }
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-sm:grid-cols-1">
       {products.map((product) => (
         <Card key={product.id} product={product}></Card>
       ))}
