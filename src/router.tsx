@@ -11,6 +11,7 @@ import ProductPage from "./pages/ProductPage";
 import LoginPage from "./pages/LoginPage";
 import NotFound from "./pages/NotFound";
 import CartPage from "./pages/CartPage";
+import ChatPage from "./pages/ChatPage";
 
 //firstly we have to create a "createRootRoute" with component that have <Outlet/>
 
@@ -58,6 +59,12 @@ const notFoundRoute = createRoute({
   component: NotFound,
 });
 
+const chatPage = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/chat",
+  component: ChatPage,
+});
+
 // then we need a "route tree"
 
 const routeTree = rootRoute.addChildren([
@@ -67,6 +74,7 @@ const routeTree = rootRoute.addChildren([
   productRoute,
   loginRoute,
   indexRoute,
+  chatPage,
 ]);
 
 // then create router

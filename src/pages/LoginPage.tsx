@@ -1,16 +1,25 @@
 import { useEffect, useRef } from "react";
 import { Link } from "@tanstack/react-router";
+import { useAuth } from "../context/AuthContex";
 
 function LoginPage() {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const { login } = useAuth();
+  const UserNameRef = useRef<HTMLInputElement>(null);
+  const PasswrodRef = useRef<HTMLInputElement>(null);
+  let userName = "";
+  let password = "";
 
   useEffect(() => {
-    inputRef.current?.focus();
+    UserNameRef.current?.focus();
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Login submitted");
+    login(userName, password);
+    userName = "";
+    password = "";
+    if (UserNameRef.current) UserNameRef.current.value = "";
+    if (PasswrodRef.current) PasswrodRef.current.value = "";
   };
 
   return (
@@ -26,7 +35,8 @@ function LoginPage() {
               UserName
             </label>
             <input
-              ref={inputRef}
+              ref={UserNameRef}
+              onChange={(e) => (userName = e.target.value)}
               type="text"
               placeholder="UserName"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
@@ -38,6 +48,8 @@ function LoginPage() {
               Password
             </label>
             <input
+              ref={PasswrodRef}
+              onChange={(e) => (password = e.target.value)}
               type="password"
               placeholder="••••••••"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
@@ -53,13 +65,14 @@ function LoginPage() {
         </form>
 
         <p className="text-center text-sm text-gray-500 mt-4">
-          Don't have an acc?{" "}
+          Don't have an acc?
           <Link
             to="/login"
-            className="text-cyan-700 hover:underline font-medium"
+            className="text-cyan-700 hover:underline font-medium pl-2"
           >
             Register
           </Link>
+          <p className="font-bold text-lg">(admin,123)</p>
         </p>
       </div>
     </div>
