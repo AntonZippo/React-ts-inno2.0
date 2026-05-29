@@ -8,11 +8,11 @@ interface CardListProps {
 
 function CardList({ products, isLoading }: CardListProps) {
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="dark:text-white">Loading...</p>;
   }
   if (!products || products.length === 0) {
     console.log(isLoading);
-    return <div>No products found</div>;
+    return <div className="dark:text-white">No products found</div>;
   }
   return (
     <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-sm:grid-cols-1">

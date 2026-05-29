@@ -1,10 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { useCart } from "../../context/CartContext";
+import { useAuth } from "../../context/AuthContex";
 
 interface HeaderProps {
   toggleTheme: () => void;
 }
 function Header({ toggleTheme }: HeaderProps) {
+  const { isLogged } = useAuth();
   const { totalItems } = useCart();
   return (
     <>
@@ -38,12 +40,22 @@ function Header({ toggleTheme }: HeaderProps) {
               ☀️/🌑
             </button>
           </div>
-          <Link
-            to="/login"
-            className="bg-gray-100 text-cyan-700 border border-cyan-700 py-2 px-3 rounded-md  hover:bg-cyan-700 hover:text-white dark:bg-gray-600 dark:border-none dark:text-white"
-          >
-            Login
-          </Link>
+          <div className="flex gap-6">
+            {isLogged && (
+              <Link
+                to="/chat"
+                className="bg-gray-100 text-cyan-700 border border-cyan-700 py-2 px-3 rounded-md  hover:bg-cyan-700 hover:text-white dark:bg-gray-600 dark:border-none dark:text-white"
+              >
+                Secret chat
+              </Link>
+            )}
+            <Link
+              to="/login"
+              className="bg-gray-100 text-cyan-700 border border-cyan-700 py-2 px-3 rounded-md  hover:bg-cyan-700 hover:text-white dark:bg-gray-600 dark:border-none dark:text-white"
+            >
+              Login
+            </Link>
+          </div>
         </nav>
       </header>
     </>
