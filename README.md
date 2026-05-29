@@ -2,7 +2,7 @@ Product catalog 2.0
 
 <img width="362" height="124" alt="SPA-2 0" src="https://github.com/user-attachments/assets/68a2a28e-b48c-43a5-a78c-c35da3c042f9" />
 
-[![Deployed with Vercel](https://img.shields.io/badge/deployed%20with-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://spa-react-98.vercel.app/home) - link to App.
+[![Deployed with Vercel](https://img.shields.io/badge/deployed%20with-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://react-spa-20.vercel.app/home) - link to App.
 
 A single-page React application that presents a product catalog backed by the public [DummyJSON](https://dummyjson.com/) REST API.
 Users can browse with category filters, price and rating filters (client-side), search products, open product detail pages, add products to cart.
